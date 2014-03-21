@@ -17,12 +17,12 @@ var spawn = require('child_process').spawn
  */
 
 module.exports = function(str, lang, fn){
-  var args = ['-l', lang, '-f', 'html', '-O', 'encoding=utf8,linenos=true'];
+  var args = ['-l', lang, '-f', 'html', '-O', 'encoding=utf8,linespans=line,lineanchors=line'];
   var buf = '';
 
   if ('function' == typeof lang) {
     fn = lang;
-    args = ['-g', '-f', 'html', '-O', 'encoding=utf8,linenos=true'];
+    args = ['-g', '-f', 'html', '-O', 'encoding=utf8,linespans=line,lineanchors=line'];
   }
 
   debug('highlight %s', lang);
